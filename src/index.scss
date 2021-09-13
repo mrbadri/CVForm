@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./assets/style/custom.scss" ; 
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import url('https://cdn.fontcdn.ir/Font/Persian/Yekan/Yekan.css');
+
+@font-face {
+    font-family: 'kalamehRegular';
+    src:  url('./assets/font/KalamehWeb/woff2/KalamehWeb_Regular.woff2') format('woff2'),
+          url('./assets/font/KalamehWeb/woff/KalamehWeb_Regular.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'kalamehBold';
+    src:  url('./assets/font/KalamehWeb/woff2/KalamehWeb_Bold.woff2') format('woff2'),
+          url('./assets/font/KalamehWeb/woff/KalamehWeb_Bold.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'kalamehThin';
+    src:  url('./assets/font/KalamehWeb/woff2/KalamehWeb_thin.woff2') format('woff2'),
+          url('./assets/font/KalamehWeb/woff/KalamehWeb_thin.woff') format('woff');
+  }
+
+*{
+    
+    font-family: 'kalamehBold';
+}
