@@ -1,0 +1,192 @@
+
+@mixin inputFocus() {
+    border: 1px solid #ced4da !important;
+    border-radius: 0.25rem;
+    box-shadow: none !important;
+    outline: none!important;
+}
+@mixin input() {
+    border: 1px solid #ced4da !important;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    color: #000;
+    box-shadow: none !important;
+}
+
+// for rtl form 
+.form-fa{
+    // for input bootstrap 
+    .form-floating > label {
+        left: unset;
+        right: 0;
+    }
+
+    .form-control{
+        @include input ; 
+        &:focus{
+            @include inputFocus; 
+        }
+    }
+
+    .form-select{
+        @include input ; 
+        &:focus{
+            @include inputFocus; 
+        }
+    }
+
+    input:-internal-autofill-selected{
+        background-color: #fff !important;
+    }
+    
+    .form-floating > .form-control:-webkit-autofill ~ label , .form-floating > .form-control:focus ~ label, .form-floating > .form-control:not(:placeholder-shown) ~ label, .form-floating > .form-select ~ label {
+        opacity: 0.65;
+        transform: scale(1) translateY(-0.5rem) translateX(0.25rem);
+        font-size: 0.75rem;
+    }
+
+    // for multi select input
+    .multiselect-container{
+        .search-wrapper {
+            @include input ; 
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 58px !important;
+            padding: 10px;
+            input{
+                padding-right: 10px;
+            }
+        }
+        .chip{
+            border-radius: 4px;
+            margin-bottom: 0;
+            img{
+                margin-right: 5px;
+            }
+        }
+    }
+
+    // for datePicker
+    .rmdp-container {
+        @apply w-full ; 
+        .rmdp-input{
+            @apply w-full ; 
+            @include input ; 
+            min-height: 58px;
+            padding: 10px;
+            text-align: center !important;
+            cursor:  pointer;
+            &:focus{
+                @include input ; 
+            }
+        }
+        .ep-arrow{
+
+            cursor: pointer;
+        }
+        .rmdp-wrapper{
+            .rmdp-top-class {
+                .rmdp-calendar{
+                    .rmdp-header{
+                        .rmdp-arrow-container{
+                            .rmdp-arrow{}
+                        }
+                        .rmdp-header-values{}
+                        .rmdp-arrow-container{
+                            .rmdp-arrow{}
+                        }
+                    }
+                    .rmdp-day-picker {
+                        .rmdp-week{
+                            .rmdp-week-day{}
+                            .rmdp-day {
+                                .sd {
+
+                                }
+                            }
+                            .rmdp-day-hidden{
+
+                            }
+                            .rmdp-selected{
+                                .sd{
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .icon-tabler-calendar-event{
+            left: 17px !important;
+        }
+    }
+}
+
+// for error form 
+.form-error{
+    display: inline-flex;
+    animation: show-error 0.5s  ease-out both;
+    @keyframes show-error {
+        0%{
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+        100%{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+}
+
+
+.table-fa{
+    th{
+        text-align: right;
+    }
+
+    td{
+        text-align: right;
+    }
+
+    // for pagition
+    .MuiTablePagination-root{
+        direction: ltr;
+    }
+
+    // to add font to table
+    *{
+        font-family: 'kalamehBold' !important;
+    }
+}
+
+
+.container-checkbox{
+    cursor: pointer;
+}
+
+
+// custom scroll 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background:transparent; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #dadada; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c5c5c5; 
+  }
+
+
+
+

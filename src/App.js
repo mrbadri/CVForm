@@ -15,7 +15,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <div className="App flex justify-center items-center w-screen  h-screen ">
+        <div className="App flex justify-center items-center ">
           <Switch>
             <Route path="/chart">
               <Chart></Chart>

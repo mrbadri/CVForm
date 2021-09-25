@@ -1,0 +1,35 @@
+.Snackbar{
+    animation: show-snackbar 0.5s ease-out  , hide-snackbar 1s 2.25s  cubic-bezier(.64,-0.28,1,-0.35) forwards  ;
+    // animation: name duration timing-function delay iteration-count direction fill-mode;
+    // animation-fill-mode: ;
+    @keyframes show-snackbar {
+        0%{
+            transform: translateX(-100vw);
+        }
+        100%{
+            transform: translateX(0);
+        }
+    }
+    @keyframes hide-snackbar {
+        0%{
+            transform: scaleX(1) translateX(0);
+        }
+        100%{
+            
+            transform: scaleX(2.25) translateX(100vw);
+
+        }
+    }
+    &-line{
+        animation: progress 2s 0.4s ease-in-out both ;
+        @keyframes progress {
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 100%;
+            }
+
+        }
+    }
+}

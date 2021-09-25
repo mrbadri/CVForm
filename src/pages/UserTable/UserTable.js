@@ -10,12 +10,12 @@ import TableRow from '@material-ui/core/TableRow';
 import { Container } from 'react-bootstrap';
 
 const columns = [
-  { id: 'name', label: 'نام و نام خانوادگی', minWidth: 170 },
+  { id: 'name', label: 'نام و نام خانوادگی', minWidth: 100 },
   { id: 'gender', label: 'جنسیت', minWidth: 100 },
   { id: 'Marriage', label: 'تاهل', minWidth: 100 },
   { id: 'CMS', label: 'نطام وظیفه', minWidth: 100 },
   { id: 'dateBirth', label: 'تاریخ تولد', minWidth: 100 },
-  { id: 'skills', label: 'مهارت ها', minWidth: 100 },
+  { id: 'skills', label: 'مهارت ها', minWidth: 130 },
  
 ];
 
@@ -33,7 +33,7 @@ export default function UserTable() {
   const exportData = () => {
       let data = [] ; 
       JSON.parse(localStorage.getItem("userList")).map(item => (
-          data.push(createData(item.fullName , item.gender , item.Marriage ,  item.CMS, item.birthYear +"/" + item.birthMonth + "/" + item.birthDay ,  item.skills.toString()))
+          data.push(createData(item.firstName + " " + item.lastName , item.gender , item.Marriage ,  item.CMS, item.birthYear +"/" + item.birthMonth + "/" + item.birthDay ,  item.skills.toString()))
       ))  
       return data ; 
   }
@@ -55,7 +55,7 @@ export default function UserTable() {
   };
 
   return (
-      <div className="w-screen h-screen py-5 overflow-x-hidden">
+      <div className="w-screen h-screen flex justify-center items-center py-5 overflow-x-hidden">
         <Container className="md:w-8/12">
             <Paper dir="rtl" className="table-fa  ">
             <TableContainer className="">
